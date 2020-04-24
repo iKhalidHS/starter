@@ -21,3 +21,20 @@ Route::get('/home', 'HomeController@index')->name('home') -> middleware('verifie
 
 Route::get('/redirect/{service}' , 'SocialController@redirect');
 Route::get('/callback/{service}' , 'SocialController@callback');
+
+Route::get('fillable', 'CrudController@getOffers');
+
+
+
+Route::group([
+    'prefix'     =>LaravelLocalization::setLocale(),   // LaravelLocalization::setLocale() will set your current language
+    'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ] //if you didn't add the middleware, it will work but will not redirect to the current lang. if someone removed the lang from the link/route
+    ], function (){
+        Route::group(['prefix'=>'offers'], function(){
+            Route::get('create','CrudController@create');
+            Route::post('store','CrudController@store') -> name('offers.store'); //route post because we are posting data received from post
+        });
+
+
+
+});
