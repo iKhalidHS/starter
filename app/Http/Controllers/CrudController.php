@@ -4,12 +4,14 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\OfferRequest;
 use App\Models\Offer;
+use App\Traits\OfferTrait;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use LaravelLocalization;
 
 class CrudController extends Controller
 {
+    use OfferTrait;
     /**
      * Create a new controller instance.
      *
@@ -60,10 +62,7 @@ class CrudController extends Controller
         //inserting
 
         //1. save the image
-        $file_extension = $request->photo-> getClientOriginalExtension(); //to get the uploaded file extension
-        $file_name      = time().'.'.$file_extension;
-        $path           = 'images/offers';
-        $request -> photo -> move($path,$file_name); //to move the uploaded file to the storage
+        $file_name = $this->saveImage($request->photo , 'images/offers'); // passing the image and the folder to be saved in
 
         //2. insert the data
         Offer::create([
@@ -77,6 +76,7 @@ class CrudController extends Controller
 
         return redirect()->back()->with(['success'=>'تم اضافة العرض بنجاح']);
     }
+
 
 //    protected  function getMessages(){
 //        return $messages = [
