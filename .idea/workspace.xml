@@ -1,18 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="da532514-a8ec-4d06-a2be-f3047623b8eb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/CrudController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/lang/ar/messages.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/lang/en/messages.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/offers/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/starter.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/starter.iml" afterDir="false" />
+    <list default="true" id="da532514-a8ec-4d06-a2be-f3047623b8eb" name="Default Changelist" comment="up to video end of vid 55">
+      <change afterPath="$PROJECT_DIR$/resources/views/offers/all.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/offers/edit.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CrudController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CrudController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/OfferRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/OfferRequest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/Offer.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Offer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/lang/en/messages.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en/messages.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/offers/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/offers/create.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -139,14 +136,14 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/lang/en" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/offers" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Khalid PC\Develping\localhost\htdocs\TEST\starter\resources\views\offers" />
       <recent name="C:\Khalid PC\Develping\localhost\htdocs\TEST\starter\resources\lang\en" />
       <recent name="C:\Khalid PC\Develping\localhost\htdocs\TEST\starter\resources\lang\ar" />
-      <recent name="C:\Khalid PC\Develping\localhost\htdocs\TEST\starter\resources\views\offers" />
       <recent name="C:\Khalid PC\Develping\localhost\htdocs\TEST\starter\app\Http\Controllers" />
       <recent name="C:\Khalid PC\Develping\localhost\htdocs\TEST\starter\resources\views\emails" />
     </key>
@@ -178,7 +175,7 @@
       <workItem from="1587242713611" duration="634000" />
       <workItem from="1587243852419" duration="6935000" />
       <workItem from="1587323167859" duration="24965000" />
-      <workItem from="1587487484192" duration="37200000" />
+      <workItem from="1587487484192" duration="55789000" />
     </task>
     <task id="LOCAL-00001" summary="up to video 45 : 4:44">
       <created>1587599942509</created>
@@ -195,7 +192,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="up to video 45 : 4:44" />
-    <option name="LAST_COMMIT_MESSAGE" value="up to video 45 : 4:44" />
+    <MESSAGE value="up to video end of vid 55" />
+    <option name="LAST_COMMIT_MESSAGE" value="up to video end of vid 55" />
   </component>
   <component name="WindowStateProjectService">
     <state x="547" y="215" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1587680427197">
@@ -230,10 +228,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="0" y="0" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1587489479355" />
-    <state x="425" y="187" key="run.anything.popup" timestamp="1587672898799">
+    <state x="426" y="187" key="run.anything.popup" timestamp="1587836655171">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1587672898799" />
+    <state x="426" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1587836655171" />
     <state x="812" y="146" width="672" height="678" key="search.everywhere.popup" timestamp="1587668550350">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -246,6 +244,16 @@
           <url>file://$PROJECT_DIR$/app/Http/Controllers/Front/userController.php</url>
           <line>4</line>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/resources/views/offers/create.blade.php</url>
+          <line>67</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/resources/views/offers/create.blade.php</url>
+          <line>86</line>
+          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

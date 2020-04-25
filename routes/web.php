@@ -31,8 +31,13 @@ Route::group([
     'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ] //if you didn't add the middleware, it will work but will not redirect to the current lang. if someone removed the lang from the link/route
     ], function (){
         Route::group(['prefix'=>'offers'], function(){
-            Route::get('create','CrudController@create');
-            Route::post('store','CrudController@store') -> name('offers.store'); //route post because we are posting data received from post
+            Route::get('create','CrudController@create'); // form create
+            Route::post('store','CrudController@store') -> name('offers.store'); // insert data //route post because we are posting data received from post
+
+            Route::get('all','CrudController@getAllOffers'); //show all
+
+            Route::get('edit/{offer_id}','CrudController@editOffer'); // form edit
+            Route::post('update/{offer_id}','CrudController@updateOffer') -> name('offers.update'); // update data // you can use patch instead of post
         });
 
 

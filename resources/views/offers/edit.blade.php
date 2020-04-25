@@ -87,7 +87,7 @@
             <div class="flex-center position-ref full-height">
                 <div class="content">
                 <div class="title m-b-md">
-                    {{ __('messages.Add your offer') }}
+                    {{ __('messages.Update your offer') }}
                 </div>
 
                 @if(Session::has('success')) {{-- to check if the session has a key 'success' --}}
@@ -95,20 +95,20 @@
                       {{ Session::get('success') }} {{-- to get the session stored with key 'success' --}}
                     </div>
                 @endif
-                <form method="POST" action="{{route('offers.store')}}"> {{-- = {{url('offers\store')}} // route('offers.store') is the name assigned to the routein web.php routes (not a direct url)  --}}
+                <form method="POST" action="{{route('offers.update', $offer ->id)}}"> {{-- = {{url('offers\store')}} // route('offers.store') is the name assigned to the routein web.php routes (not a direct url)  --}}
 
                     @csrf
                    {{-- <input name="_token" value="{{csrf_token()}}"> --}}
                     <div class="form-group">
                         <label for="exampleInputEmail1">{{__('messages.Offer Name ar') }}</label>
-                        <input type="text" class="form-control" name="name_ar" placeholder="Offer Name">
+                        <input type="text" class="form-control" name="name_ar" value="{{$offer ->name_ar}}" placeholder="Offer Name">
                         @error('name_ar')
                         <small class="form-text text-danger">{{$message}}</small>
                         @enderror
                     </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1">{{__('messages.Offer Name en') }}</label>
-                        <input type="text" class="form-control" name="name_en" placeholder="Offer Name">
+                        <input type="text" class="form-control" name="name_en" value="{{$offer ->name_en}}" placeholder="Offer Name">
                         @error('name_en')
                         <small class="form-text text-danger">{{$message}}</small>
                         @enderror
@@ -116,7 +116,7 @@
 
                     <div class="form-group">
                         <label for="exampleInputEmail1">{{ __('messages.Offer Price')}}</label>
-                        <input type="text" class="form-control" name="price" placeholder="Price">
+                        <input type="text" class="form-control" name="price" value="{{$offer ->price}}" placeholder="Price">
                         @error('price')
                         <small class="form-text text-danger">{{$message}}</small>
                         @enderror
@@ -124,14 +124,14 @@
 
                     <div class="form-group">
                         <label for="exampleInputEmail1">{{__('messages.Offer details ar') }}</label>
-                        <input type="text" class="form-control" name="details_ar" placeholder="Details">
+                        <input type="text" class="form-control" name="details_ar" value="{{$offer ->details_ar}}" placeholder="Details">
                         @error('details_ar')
                         <small class="form-text text-danger">{{$message}}</small>
                         @enderror
                     </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1">{{__('messages.Offer details en') }}</label>
-                        <input type="text" class="form-control" name="details_en" placeholder="Details">
+                        <input type="text" class="form-control" name="details_en" value="{{$offer ->details_en}}" placeholder="Details">
                         @error('details_en')
                         <small class="form-text text-danger">{{$message}}</small>
                         @enderror

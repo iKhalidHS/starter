@@ -13,7 +13,7 @@ class OfferRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,19 @@ class OfferRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name_ar'    => 'required|max:100|unique:offers,name_ar', //unique name column in offer table
+            'name_en'    => 'required|max:100|unique:offers,name_en', //unique name column in offer table
+            'price'   => 'required|numeric',
+            'details_ar' => 'required',
+            'details_en' => 'required',
+        ];
+    }
+
+    public function messages(){
+        return [
+            'name.required' =>__('messages.offer name required'),
+            'name.unique'   => 'اسم العرض موجود',
+            'price.numeric' => 'السعر لابد ان يكون رقم',
         ];
     }
 }
