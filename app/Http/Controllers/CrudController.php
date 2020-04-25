@@ -40,6 +40,7 @@ class CrudController extends Controller
         return view('offers.create');
     }
 
+
     public function store(OfferRequest $request) //Request $request because the data will be received through request , so called the request class
     {
 
@@ -57,12 +58,21 @@ class CrudController extends Controller
 //        }
 
         //inserting
+
+        //1. save the image
+        $file_extension = $request->photo-> getClientOriginalExtension(); //to get the uploaded file extension
+        $file_name      = time().'.'.$file_extension;
+        $path           = 'images/offers';
+        $request -> photo -> move($path,$file_name); //to move the uploaded file to the storage
+
+        //2. insert the data
         Offer::create([
-            'name_ar' => $request->name_ar,
-            'name_en' => $request->name_en,
-            'price' => $request->price,
-            'details_ar' => $request->details_ar,
-            'details_en' => $request->details_en,
+            'name_ar'   => $request->name_ar,
+            'name_en'   => $request->name_en,
+            'photo'     => $file_name,
+            'price'     => $request->price,
+            'details_ar'=> $request->details_ar,
+            'details_en'=> $request->details_en,
         ]);
 
         return redirect()->back()->with(['success'=>'تم اضافة العرض بنجاح']);
@@ -83,6 +93,7 @@ class CrudController extends Controller
 //            'details' => 'required',
 //        ];
 //    }
+
 
     public function getAllOffers()
     {

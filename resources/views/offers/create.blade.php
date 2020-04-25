@@ -95,10 +95,19 @@
                       {{ Session::get('success') }} {{-- to get the session stored with key 'success' --}}
                     </div>
                 @endif
-                <form method="POST" action="{{route('offers.store')}}"> {{-- = {{url('offers\store')}} // route('offers.store') is the name assigned to the routein web.php routes (not a direct url)  --}}
+                <form method="POST" action="{{route('offers.store')}}" enctype="multipart/form-data"> {{-- = {{url('offers\store')}} // route('offers.store') is the name assigned to the routein web.php routes (not a direct url)  --}}
 
                     @csrf
                    {{-- <input name="_token" value="{{csrf_token()}}"> --}}
+
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">اختر صورة العرض</label>
+                        <input type="file" class="form-control" name="photo">
+                        @error('photo')
+                        <small class="form-text text-danger">{{$message}}</small>
+                        @enderror
+                    </div>
+
                     <div class="form-group">
                         <label for="exampleInputEmail1">{{__('messages.Offer Name ar') }}</label>
                         <input type="text" class="form-control" name="name_ar" placeholder="Offer Name">
