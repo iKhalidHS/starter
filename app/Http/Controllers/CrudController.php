@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\VideoViewer;
 use App\Http\Requests\OfferRequest;
 use App\Models\Offer;
+use App\Models\Video;
 use App\Traits\OfferTrait;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -134,8 +136,19 @@ class CrudController extends Controller
 //            'name_en'=> $request->name_en,
 //            'price'  => $request->price,
 //        ]);
+        // Note we use update() if we are updating the model using collection , but if we are updating it using model field directly , we use $model-> save() , same like what we did with the listener page
 
         return redirect()->back()->with(['success'=>'تم التحديث بنجاح']);
     }
 
+
+
+    public function getVideo(){
+        $video = Video::first(); // this will se;ect the first video in the table
+        //$video = Video::select('viewers')->first(); // FROM ME : this will select only the field viewers only in th first video in the table
+        event(new VideoViewer($video)); //firing the event using the built-in function event, and passing the table model in it because the event constructor takes that value ! remember the even class.
+        return view('video') ->with('video',$video); //passing the model $video in variable video
+
+        //Note: this event example was to learn how to create event & listener , but we can easily update the views count directly here.
+    }
 }

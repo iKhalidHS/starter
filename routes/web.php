@@ -40,6 +40,6 @@ Route::group([
             Route::post('update/{offer_id}','CrudController@updateOffer') -> name('offers.update'); // update data // you can use patch instead of post
         });
 
-
+        Route::get('youtube','CrudController@getVideo');
 
 });

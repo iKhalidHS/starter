@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="da532514-a8ec-4d06-a2be-f3047623b8eb" name="Default Changelist" comment="up to video end of vid 55">
-      <change afterPath="$PROJECT_DIR$/app/Traits/OfferTrait.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/video.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CrudController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CrudController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Offer.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Offer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/EventServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/EventServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,16 +133,16 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/offers" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Khalid PC\Develping\localhost\htdocs\TEST\starter\resources\views" />
       <recent name="C:\Khalid PC\Develping\localhost\htdocs\TEST\starter\resources\views\offers" />
       <recent name="C:\Khalid PC\Develping\localhost\htdocs\TEST\starter\resources\lang\en" />
       <recent name="C:\Khalid PC\Develping\localhost\htdocs\TEST\starter\resources\lang\ar" />
       <recent name="C:\Khalid PC\Develping\localhost\htdocs\TEST\starter\app\Http\Controllers" />
-      <recent name="C:\Khalid PC\Develping\localhost\htdocs\TEST\starter\resources\views\emails" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Khalid PC\Develping\localhost\htdocs\TEST\starter\app" />
@@ -169,7 +172,8 @@
       <workItem from="1587242713611" duration="634000" />
       <workItem from="1587243852419" duration="6935000" />
       <workItem from="1587323167859" duration="24965000" />
-      <workItem from="1587487484192" duration="62158000" />
+      <workItem from="1587487484192" duration="68101000" />
+      <workItem from="1587954046827" duration="5103000" />
     </task>
     <task id="LOCAL-00001" summary="up to video 45 : 4:44">
       <created>1587599942509</created>
@@ -198,6 +202,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="590" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.824@0.0.1536.824" timestamp="1587088942748" />
+    <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1587862438410">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1587862438410" />
     <state x="393" y="5" width="749" height="750" key="CommitChangelistDialog2" timestamp="1587692191344">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -222,10 +230,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="513" y="227" key="NewPhpClassDialog/0.0.1536.824@0.0.1536.824" timestamp="1587854920028" />
-    <state x="0" y="0" key="com.intellij.ide.util.TipDialog" timestamp="1587489479355">
+    <state x="0" y="0" key="com.intellij.ide.util.TipDialog" timestamp="1587954101900">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="0" y="0" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1587489479355" />
+    <state x="0" y="0" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1587954101900" />
     <state x="426" y="187" key="run.anything.popup" timestamp="1587850920658">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
