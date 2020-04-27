@@ -103,6 +103,7 @@ class CrudController extends Controller
             'id',
             'name_'.LaravelLocalization::getCurrentLocale().' as name',
             'price',
+            'photo', // added by me
             'details_'.LaravelLocalization::getCurrentLocale().' as details') -> get(); //return collection
         return view('offers.all', compact('offers'));
     }
@@ -116,6 +117,17 @@ class CrudController extends Controller
 
         $offer = Offer::select('id','name_ar','name_en','details_ar','details_en','price') -> find($offer_id);
         return view('offers.edit',compact('offer'));
+    }
+
+
+    public function delete($offer_id){
+        // check if offer id exists
+        $offer = Offer::find($offer_id);  //Offer::where('id','$offer_id')->first();
+        if(!$offer_id)
+            return redirect()->back()->with(['error'=>__('messages.offer not exist')]);
+
+        $offer ->delete();
+        return redirect()->route('offers.all')->with(['success'=>__('messages.offer deleted successfully')]);
     }
 
     public function updateOffer(OfferRequest $request, $offer_id){ //Note:we make validation and we received the offer id submitted with the route of edit form

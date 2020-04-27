@@ -34,10 +34,11 @@ Route::group([
             Route::get('create','CrudController@create'); // form create
             Route::post('store','CrudController@store') -> name('offers.store'); // insert data //route post because we are posting data received from post
 
-            Route::get('all','CrudController@getAllOffers'); //show all
+            Route::get('all','CrudController@getAllOffers') -> name('offers.all'); //show all
 
             Route::get('edit/{offer_id}','CrudController@editOffer'); // form edit
             Route::post('update/{offer_id}','CrudController@updateOffer') -> name('offers.update'); // update data // you can use patch instead of post
+            Route::get('delete/{offer_id}','CrudController@delete') -> name('offers.delete'); //
         });
 
         Route::get('youtube','CrudController@getVideo');
