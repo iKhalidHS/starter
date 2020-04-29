@@ -83,13 +83,13 @@
         $(document).on('click','#save_offer',function (e) { // means if he click the form button id, run the ajax
             e.preventDefault(); // we added 'e' to pass as a variable to function to prevent for ex. user from going to another link before updating the ajax ! Note:this deprecated
 
-            var $formData = new FormData($('#offerForm')[0]); //method in javascript to get all form data  // #offerForm is the form id
+            var formData = new FormData($('#offerForm')[0]); //method in javascript to get all form data  // #offerForm is the form id
 
             $.ajax({
                 type        : 'post',
                 enctype     : 'multipart/form-data', //if we will upload file
                 url         : "{{route('ajax.offers.store')}}",
-                data        : $formData,
+                data        : formData,
                 processData : false,
                 contentType : false,
                 cashe       : false,
