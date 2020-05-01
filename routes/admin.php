@@ -11,6 +11,6 @@
 |
 */
 
-Route::get('admin', function () {
-    return "hello admin";
-});
+//Route::get('admin', function () {
+//    return "hello admin";
+//});

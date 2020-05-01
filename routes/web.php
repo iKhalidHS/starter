@@ -59,4 +59,27 @@ Route::group(['prefix' => 'ajax-offers'], function(){
 
 });
 
-######################## Begin ajax routes ##################
+######################## End ajax routes ##################
+
+
+######################## Begin Authentication && Guards ##################
+
+//Route::group(['namespace'=>'Auth','middleware' => 'CheckAge'], function (){
+Route::group(['namespace'=>'Auth','middleware' => ['auth','CheckAge']], function (){
+
+    Route::get('adults','CustomAuthController@adults') ->name('adult');
+});
+
+Route::get('site','Auth\CustomAuthController@adults') -> middleware('auth:web')-> name('site'); // middleware('auth:web') is the default guard and you can write it as [  -> middleware('auth')->   ]
+Route::get('admin','Auth\CustomAuthController@admin') -> middleware('auth:admin')-> name('admin');
+
+Route::get('admin/login','Auth\CustomAuthController@adminLogin') -> name('admin.login');
+Route::post('admin/login','Auth\CustomAuthController@checkAdminLogin') -> name('save.admin.login');
+
+
+Route::get('dashborad',function (){
+    return 'Not adult';
+}) -> name('not.adult'); //test route
+
+
+######################## END Authentication && Guards ##################
