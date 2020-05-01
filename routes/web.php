@@ -41,7 +41,7 @@ Route::group([
             Route::get('delete/{offer_id}','CrudController@delete') -> name('offers.delete'); //
         });
 
-        Route::get('youtube','CrudController@getVideo');
+        Route::get('youtube','CrudController@getVideo')->middleware('auth');
 
 });
 
