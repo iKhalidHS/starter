@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="da532514-a8ec-4d06-a2be-f3047623b8eb" name="Default Changelist" comment="up to video end of vid 55">
+      <change afterPath="$PROJECT_DIR$/resources/views/doctors/doctors.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/doctors/hospitals.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Listeners/IncreaseCounter.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Listeners/IncreaseCounter.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -144,8 +146,9 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/auth" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/doctors" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="inlay.hints.PHP" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -155,11 +158,11 @@
       <recent name="C:\Khalid PC\Develping\localhost\htdocs\TEST\starter\app\Http\Controllers\Front" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Khalid PC\Develping\localhost\htdocs\TEST\starter\resources\views\doctors" />
       <recent name="C:\Khalid PC\Develping\localhost\htdocs\TEST\starter\resources\views\auth" />
       <recent name="C:\Khalid PC\Develping\localhost\htdocs\TEST\starter\app\Models" />
       <recent name="C:\Khalid PC\Develping\localhost\htdocs\TEST\starter\resources\views" />
       <recent name="C:\Khalid PC\Develping\localhost\htdocs\TEST\starter\resources\views\customAuth" />
-      <recent name="C:\Khalid PC\Develping\localhost\htdocs\TEST\starter\resources\views\offers" />
     </key>
   </component>
   <component name="RunManager">
@@ -184,7 +187,7 @@
       <workItem from="1587243852419" duration="6935000" />
       <workItem from="1587323167859" duration="24965000" />
       <workItem from="1587487484192" duration="68101000" />
-      <workItem from="1587954046827" duration="68834000" />
+      <workItem from="1587954046827" duration="87347000" />
     </task>
     <task id="LOCAL-00001" summary="up to video 45 : 4:44">
       <created>1587599942509</created>
@@ -241,6 +244,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="513" y="227" key="NewPhpClassDialog/0.0.1536.824@0.0.1536.824" timestamp="1587854920028" />
+    <state x="555" y="55" key="SettingsEditor" timestamp="1588302379014">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="555" y="55" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1588302379014" />
     <state x="0" y="0" key="com.intellij.ide.util.TipDialog" timestamp="1587954101900">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -249,10 +256,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="1007" y="330" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1588036195870" />
-    <state x="426" y="186" key="run.anything.popup" timestamp="1588113805564">
+    <state x="426" y="186" key="run.anything.popup" timestamp="1588380484781">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="426" y="186" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1588113805564" />
+    <state x="426" y="186" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1588380484781" />
     <state x="812" y="146" width="672" height="678" key="search.everywhere.popup" timestamp="1587668550350">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

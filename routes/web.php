@@ -83,3 +83,34 @@ Route::get('dashborad',function (){
 
 
 ######################## END Authentication && Guards ##################
+
+
+################# Begin relations routes #################
+
+Route::get('has-one', 'Relation\RelationsController@hasOneRelation');
+Route::get('has-one-reverse', 'Relation\RelationsController@hasOneRelationReverse');
+Route::get('get-user-has-phone', 'Relation\RelationsController@getUserHasPhone');
+Route::get('get-user-not-has-phone', 'Relation\RelationsController@getUserNotHasPhone');
+Route::get('get-user-has-phone-with-condition','Relation\RelationsController@getUserWhereHasPhoneWithCondition');
+
+
+################## Begin one To many Relationship #####################
+
+Route::get('hospital-has-many','Relation\RelationsController@getHospitalDoctors');
+
+Route::get('hospitals','Relation\RelationsController@hospitals');
+
+Route::get('doctors/{hospital_id}','Relation\RelationsController@doctors')-> name('hospital.doctors');
+
+Route::get('hospitals_has_doctors','Relation\RelationsController@hospitalsHasDoctor');
+
+Route::get('hospitals_has_doctors_male','Relation\RelationsController@hospitalsHasOnlyMaleDoctors');
+
+Route::get('hospitals_not_has_doctors','Relation\RelationsController@hospitals_not_has_doctors');
+
+
+################## End one To many Relationship #####################
+
+
+################# End relations routes #################
+
