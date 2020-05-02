@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="da532514-a8ec-4d06-a2be-f3047623b8eb" name="Default Changelist" comment="up to video end of vid 55">
-      <change afterPath="$PROJECT_DIR$/resources/views/doctors/doctors.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/doctors/hospitals.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Relation/RelationsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Relation/RelationsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Doctor.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Doctor.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/doctors/doctors.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/doctors/doctors.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/doctors/hospitals.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/doctors/hospitals.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -187,7 +188,7 @@
       <workItem from="1587243852419" duration="6935000" />
       <workItem from="1587323167859" duration="24965000" />
       <workItem from="1587487484192" duration="68101000" />
-      <workItem from="1587954046827" duration="87347000" />
+      <workItem from="1587954046827" duration="97543000" />
     </task>
     <task id="LOCAL-00001" summary="up to video 45 : 4:44">
       <created>1587599942509</created>

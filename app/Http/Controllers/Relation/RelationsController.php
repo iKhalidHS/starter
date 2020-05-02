@@ -71,7 +71,58 @@ class RelationsController extends Controller
 
         // $doctor = Doctor::find(3)->hospital->name;
 
-        return $doctor;
+        // return $doctor;
     }
 
+
+    public function hospitals(){
+        $hospitals = Hospital::select('id','name','address')->get();
+        return view('doctors.hospitals', compact('hospitals'));
+    }
+
+    public function doctors($hospital_id){
+
+        // make validation that the id is exist then continue any of the following
+
+        #1
+        $hospital = Hospital::find($hospital_id);
+        $doctors = $hospital->doctors;
+        return view('doctors.doctors', compact('doctors'));
+
+        #2
+        //return $hospital = Hospital::find($hospital_id)->doctors;
+
+    }
+
+    // get all hospital which must have doctors
+    public function hospitalsHasDoctor(){
+        $hospitals = Hospital::whereHas('doctors')->get();
+        return $hospitals;
+    }
+
+    public function hospitalsHasOnlyMaleDoctors(){
+        $hospitals = Hospital::with('doctors')->whereHas('doctors',function($q){
+            $q->where('gender',1);
+        })->get();
+
+        return $hospitals;
+    }
+
+    public function hospitals_not_has_doctors(){
+        return Hospital::whereDoesntHave('doctors')->get();
+
+    }
+
+    public function deleteHospital($hospital_id){
+        $hospital = Hospital::find($hospital_id);    //you can use findOrFails()
+        if(!$hospital)
+            return abort('404'); //if not found , it will go to page 404 'notfound'
+        // #1 delete doctors in this hospital
+        $hospital -> doctors()-> delete(); // note we called the relation [ doctors() ] as a function not only [ 'doctors' ]
+        // #2 delete the hospital itself
+        $hospital -> delete();
+
+        return redirect()->back();
+        // return redirect()-> route('hospital.all');
+    }
 }
