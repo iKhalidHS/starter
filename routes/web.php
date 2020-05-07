@@ -56,9 +56,7 @@ Route::group(['prefix' => 'ajax-offers'], function(){
     Route::post('delete','OfferController@delete') -> name('ajax.offers.delete'); //
     Route::get('edit/{offer_id}','OfferController@edit') -> name('ajax.offers.edit'); //
     Route::post('update','OfferController@update') -> name('ajax.offers.update'); //
-
 });
-
 ######################## End ajax routes ##################
 
 
@@ -112,6 +110,27 @@ Route::get('hospitals_not_has_doctors','Relation\RelationsController@hospitals_n
 
 
 ################## End one To many Relationship #####################
+
+
+################## Begin  Many To many Relationship #####################
+
+Route::get('doctors-services','Relation\RelationsController@getDoctorServices');
+Route::get('service-doctors','Relation\RelationsController@getServiceDoctors');
+
+Route::get('doctors/services/{doctor_id}','Relation\RelationsController@getDoctorServicesById')-> name('doctors.services');
+Route::post('saveServices-to-doctor','Relation\RelationsController@saveServicesToDoctors')-> name('save.doctors.services');
+
+
+################## End Many To many Relationship #####################
+
+
+######################### has one through ##########################
+
+
+Route::get('has-one-through','Relation\RelationsController@getPatientDoctor');
+
+Route::get('has-many-through','Relation\RelationsController@getCountryDoctor');
+
 
 
 ################# End relations routes #################

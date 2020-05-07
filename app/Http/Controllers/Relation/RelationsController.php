@@ -3,9 +3,12 @@
 namespace App\Http\Controllers\Relation;
 
 use App\Http\Controllers\Controller;
+use App\Models\Country;
 use App\Models\Doctor;
 use App\Models\Hospital;
+use App\Models\Patient;
 use App\Models\Phone;
+use App\Models\Service;
 use App\User;
 use Illuminate\Http\Request;
 
@@ -125,4 +128,49 @@ class RelationsController extends Controller
         return redirect()->back();
         // return redirect()-> route('hospital.all');
     }
+
+    public function getDoctorServices(){
+        $doctor = Doctor::with('services')->find(5);
+        //after making check, do the following
+        return $doctor -> services;
+    }
+
+    public function getServiceDoctors(){
+        return $doctors = Service::with(['doctors' => function($q){
+            $q->select('doctors.id','name','title'); //note we specified the id of table doctor to avoid error
+        }])->find(1);
+    }
+
+    public function getDoctorServicesById($doctorId){
+        $doctor = Doctor::find($doctorId);
+        $services = $doctor -> services; //selected doctor services
+
+        $doctors  = Doctor::select('id','name')->get();
+        $allServices = Service::select('id','name')->get(); //all database services
+
+        return view('doctors.services',compact('services','doctors', 'allServices'));
+    }
+
+    public function saveServicesToDoctors(Request $request){
+        $doctor = Doctor::find($request->doctor_id);
+        if(!$doctor)
+            return abort('404');
+        //$doctor->services()->attach($request->servicesIds); //many to many insert to db // attach is a method to save array of ... regardless of repeated or not // services() is the relation with doctor
+        //$doctor->services()->sync($request->servicesIds); //sync() remove all the old related to that doctor and update it with new selection only !
+        $doctor->services()->syncWithoutDetaching($request->servicesIds); //will add only the new selectios to the old ones in db
+        return redirect()->back();
+
+    }
+
+
+    public function getPatientDoctor(){
+        $patient =  Patient::find(2);
+        return $patient -> doctor;
+    }
+
+    public function getCountryDoctor(){
+        $country = Country::find(1);
+        return $country -> doctors;
+    }
+
 }

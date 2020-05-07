@@ -27,47 +27,37 @@
                 <div class="form-group">
                     <label for="exampleInputEmail1">اختر صورة العرض</label>
                     <input type="file" class="form-control" name="photo">
-                    @error('photo')
-                    <small class="form-text text-danger">{{$message}}</small>
-                    @enderror
+
+                    <small id="photo_error" class="form-text text-danger"></small>
+
                 </div>
 
                 <div class="form-group">
                     <label for="exampleInputEmail1">{{__('messages.Offer Name ar') }}</label>
                     <input type="text" class="form-control" name="name_ar" placeholder="Offer Name">
-                    @error('name_ar')
-                    <small class="form-text text-danger">{{$message}}</small>
-                    @enderror
+                    <small id="name_ar_error" class="form-text text-danger"></small>
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">{{__('messages.Offer Name en') }}</label>
                     <input type="text" class="form-control" name="name_en" placeholder="Offer Name">
-                    @error('name_en')
-                    <small class="form-text text-danger">{{$message}}</small>
-                    @enderror
+                    <small  id="name_en_error" class="form-text text-danger"></small>
                 </div>
 
                 <div class="form-group">
                     <label for="exampleInputEmail1">{{ __('messages.Offer Price')}}</label>
                     <input type="text" class="form-control" name="price" placeholder="Price">
-                    @error('price')
-                    <small class="form-text text-danger">{{$message}}</small>
-                    @enderror
+                    <small  id="price_error" class="form-text text-danger"></small>
                 </div>
 
                 <div class="form-group">
                     <label for="exampleInputEmail1">{{__('messages.Offer details ar') }}</label>
                     <input type="text" class="form-control" name="details_ar" placeholder="Details">
-                    @error('details_ar')
-                    <small class="form-text text-danger">{{$message}}</small>
-                    @enderror
+                    <small id="details_ar_error" class="form-text text-danger"></small>
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">{{__('messages.Offer details en') }}</label>
                     <input type="text" class="form-control" name="details_en" placeholder="Details">
-                    @error('details_en')
-                    <small class="form-text text-danger">{{$message}}</small>
-                    @enderror
+                    <small id="details_en_error" class="form-text text-danger"></small>
                 </div>
 
                 <button id="save_offer" class="btn btn-primary">Save Offer</button>
@@ -82,6 +72,14 @@
 
         $(document).on('click','#save_offer',function (e) { // means if he click the form button id, run the ajax
             e.preventDefault(); // we added 'e' to pass as a variable to function to prevent for ex. user from going to another link before updating the ajax ! Note:this deprecated
+
+            // $('texttttt') means select this // below we rest the value of each validation error id , so if the user click twice the save button it first rest the errors then show any new if there
+            $('#photo_error').text('');
+            $('#name_ar_error').text('');
+            $('#name_en_error').text('');
+            $('#price_error').text('');
+            $('#details_ar_error').text('');
+            $('#details_en_error').text('');
 
             var formData = new FormData($('#offerForm')[0]); //method in javascript to get all form data  // #offerForm is the form id
 
@@ -101,8 +99,13 @@
                     }
 
                 }, error:function (reject) {
-
-            }
+                    // extraction of form validation errors
+                    var response = $.parseJSON(reject.responseText); // return the errors as text
+                    $.each(response.errors, function (key, val) {   //key:key of array , val:value of array // errors: is the the name of array of errors that appears in the request header in the network // we are looping on theses errors
+                        $("#" + key + "_error").text(val[0]);  // adding a text value of each error to each id above //if you read the errors in the request network you will understand
+                        // above is like : $('#details_ar_error').text(val[0])
+                    });
+                }
 
             });
         });
