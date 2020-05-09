@@ -2,17 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="da532514-a8ec-4d06-a2be-f3047623b8eb" name="Default Changelist" comment="up to video end of vid 55">
-      <change afterPath="$PROJECT_DIR$/app/Models/Country.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Medical.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Patient.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Service.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/doctors/services.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Scopes/OfferScope.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/offers/paginations.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CrudController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CrudController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Relation/RelationsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Relation/RelationsController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/Doctor.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Doctor.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Hospital.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Hospital.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/ajaxoffers/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/ajaxoffers/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/doctors/doctors.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/doctors/doctors.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Offer.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Offer.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -153,23 +149,23 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../MVC" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/offers" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="inlay.hints.PHP" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Khalid PC\Develping\localhost\htdocs\TEST\starter\resources\views\offers" />
+      <recent name="C:\Khalid PC\Develping\localhost\htdocs\TEST\starter\app\Models" />
+      <recent name="C:\Khalid PC\Develping\localhost\htdocs\TEST\starter\resources\views\doctors" />
+      <recent name="C:\Khalid PC\Develping\localhost\htdocs\TEST\starter\resources\views\auth" />
+      <recent name="C:\Khalid PC\Develping\localhost\htdocs\TEST\starter\resources\views" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Khalid PC\Develping\localhost\htdocs\TEST\starter\app" />
       <recent name="C:\Khalid PC\Develping\localhost\htdocs\TEST\starter\app\Models" />
       <recent name="C:\Khalid PC\Develping\localhost\htdocs\TEST\starter\app\Providers" />
       <recent name="C:\Khalid PC\Develping\localhost\htdocs\TEST\starter\app\Http\Controllers\Front" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Khalid PC\Develping\localhost\htdocs\TEST\starter\app\Models" />
-      <recent name="C:\Khalid PC\Develping\localhost\htdocs\TEST\starter\resources\views\doctors" />
-      <recent name="C:\Khalid PC\Develping\localhost\htdocs\TEST\starter\resources\views\auth" />
-      <recent name="C:\Khalid PC\Develping\localhost\htdocs\TEST\starter\resources\views" />
-      <recent name="C:\Khalid PC\Develping\localhost\htdocs\TEST\starter\resources\views\customAuth" />
     </key>
   </component>
   <component name="RunManager">
@@ -197,6 +193,7 @@
       <workItem from="1587954046827" duration="103246000" />
       <workItem from="1588626042304" duration="10331000" />
       <workItem from="1588735228605" duration="5804000" />
+      <workItem from="1588893102103" duration="16228000" />
     </task>
     <task id="LOCAL-00001" summary="up to video 45 : 4:44">
       <created>1587599942509</created>
@@ -253,10 +250,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1587244743791" />
-    <state x="513" y="227" key="NewPhpClassDialog" timestamp="1587854920028">
+    <state x="513" y="227" key="NewPhpClassDialog" timestamp="1588990247334">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="513" y="227" key="NewPhpClassDialog/0.0.1536.824@0.0.1536.824" timestamp="1587854920028" />
+    <state x="513" y="227" key="NewPhpClassDialog/0.0.1536.824@0.0.1536.824" timestamp="1588990247334" />
     <state x="555" y="55" key="SettingsEditor" timestamp="1588302379014">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -273,10 +270,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="426" y="186" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1588380484781" />
-    <state x="812" y="146" width="672" height="678" key="search.everywhere.popup" timestamp="1587668550350">
+    <state x="812" y="146" width="672" height="678" key="search.everywhere.popup" timestamp="1588997174725">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="812" y="146" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1587668550350" />
+    <state x="812" y="146" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1588997174725" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

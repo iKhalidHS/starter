@@ -11,6 +11,8 @@
 |
 */
 
+define('PAGINATION_COUNT', 3);
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -39,6 +41,9 @@ Route::group([
             Route::get('edit/{offer_id}','CrudController@editOffer'); // form edit
             Route::post('update/{offer_id}','CrudController@updateOffer') -> name('offers.update'); // update data // you can use patch instead of post
             Route::get('delete/{offer_id}','CrudController@delete') -> name('offers.delete'); //
+
+            Route::get('get-all-inactive-offer','CrudController@getAllInactiveOffers'); //
+
         });
 
         Route::get('youtube','CrudController@getVideo')->middleware('auth');
@@ -132,6 +137,11 @@ Route::get('has-one-through','Relation\RelationsController@getPatientDoctor');
 Route::get('has-many-through','Relation\RelationsController@getCountryDoctor');
 
 
-
 ################# End relations routes #################
 
+
+################### Beginaccessors and mutators #############
+
+Route::get('accessors','Relation\RelationsController@getDoctors'); //get data
+
+################### End accessors and mutators #############

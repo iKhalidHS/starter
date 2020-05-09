@@ -6,6 +6,7 @@ use App\Events\VideoViewer;
 use App\Http\Requests\OfferRequest;
 use App\Models\Offer;
 use App\Models\Video;
+use App\Scopes\OfferScope;
 use App\Traits\OfferTrait;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -99,13 +100,26 @@ class CrudController extends Controller
 
     public function getAllOffers()
     {
+//        $offers = Offer::select(
+//            'id',
+//            'name_'.LaravelLocalization::getCurrentLocale().' as name',
+//            'price',
+//            'photo', // added by me
+//            'details_'.LaravelLocalization::getCurrentLocale().' as details') -> get(); //return collection
+//
+//        return view('offers.all', compact('offers'));
+
+        ##################### paginate result #######
+
         $offers = Offer::select(
-            'id',
-            'name_'.LaravelLocalization::getCurrentLocale().' as name',
-            'price',
-            'photo', // added by me
-            'details_'.LaravelLocalization::getCurrentLocale().' as details') -> get(); //return collection
-        return view('offers.all', compact('offers'));
+        'id',
+        'name_'.LaravelLocalization::getCurrentLocale().' as name',
+        'price',
+        'photo', // added by me
+        'details_'.LaravelLocalization::getCurrentLocale().' as details'
+        ) -> paginate(PAGINATION_COUNT); //return collection
+
+        return view('offers.paginations', compact('offers'));
     }
 
     public function editOffer($offer_id)
@@ -162,5 +176,19 @@ class CrudController extends Controller
         return view('video') ->with('video',$video); //passing the model $video in variable video
 
         //Note: this event example was to learn how to create event & listener , but we can easily update the views count directly here.
+    }
+
+    public function getAllInactiveOffers(){
+
+        //where whereNull whereNotNull whereIn
+
+        //return $inactiveOffers = Offer::inactive()->get();
+        //return $inactiveOffers = Offer::invalid()->get();
+
+        //return $inactiveOffers = Offer::get(); // we applied a global scope
+
+        // removing global scope //
+
+        return $inactiveOffers = Offer::withoutGlobalScope(OfferScope::class)->get(); //without applying the global scope
     }
 }
